@@ -8,7 +8,6 @@ from GetGoogleAPIKey import get_my_key
 
 
 def get_place_location(file_adrress):
-
     """Function to read place gps coordinates from excel file and transform it to dict: name - location"""
 
     place_gps = pd.read_excel(file_adrress, names=['Place', 'LAT', 'LONG'])
@@ -94,7 +93,7 @@ if __name__ == '__main__':
     places_collection = get_place_location('GPS.xlsx')
 
     radius = [1000, 1000, 3000]
-    types = ['cafe', 'bakery']
+    types = ['cafe', 'bakery', 'gas_station']
     types_radius_dict = dict(zip(types, radius))
 
     fetch_competitors(places_collection, types, types_radius_dict)
