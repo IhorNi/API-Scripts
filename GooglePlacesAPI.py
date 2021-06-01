@@ -69,6 +69,7 @@ def fetch_competitors_to_excel(places_collection, types, types_radius_dict):
 
             try:
                 places_result['Place'] = name
+                # each place has a sorted list of tags (cafe, bakery, shop ...) for simplicity sake onle 1st and 2nd types are extracted for further analysis
                 places_result['type_1'] = [places_result['types'][i][0] for i in range(len(places_result['types']))]
                 places_result['type_2'] = [places_result['types'][i][1] for i in range(len(places_result['types']))]
                 places_result['search_radius'] = radius
