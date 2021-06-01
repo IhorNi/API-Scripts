@@ -50,7 +50,7 @@ def get_places_nearby(gmaps_client, location, radius, type_, page_token, result_
     return result_dataframe
 
 
-def fetch_competitors(places_collection, types, types_radius_dict):
+def fetch_competitors_to_excel(places_collection, types, types_radius_dict):
     """Function to search for certain type of competitors in radius for given places"""
 
     API_KEY = get_my_key()
@@ -93,7 +93,7 @@ if __name__ == '__main__':
     places_collection = get_place_location('GPS.xlsx')
 
     radius = [1000, 1000, 3000]
-    types = ['cafe', 'bakery', 'gas_station']
+    types = ['cafe', 'bakery', 'cafe']
     types_radius_dict = dict(zip(types, radius))
 
-    fetch_competitors(places_collection, types, types_radius_dict)
+    fetch_competitors_to_excel(places_collection, types, types_radius_dict)
